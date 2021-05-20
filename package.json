@@ -1,0 +1,30 @@
+{
+  "name": "dusinbox",
+  "version": "1.0.0",
+  "description": "backend of dusinbox website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisnuaryadipa/dusinbox_backend.git"
+  },
+  "keywords": [
+    "dusinbox-backend"
+  ],
+  "author": "Wisnu Arya DIpa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wisnuaryadipa/dusinbox_backend/issues"
+  },
+  "homepage": "https://github.com/wisnuaryadipa/dusinbox_backend#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "celebrate": "^14.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "joi": "^17.4.0"
+  }
+}
