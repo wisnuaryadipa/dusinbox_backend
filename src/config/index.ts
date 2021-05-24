@@ -9,7 +9,7 @@ if (envFound.error) {
 throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
 
-const config = {
+const config: any = {
 
     logs: {
         level: process.env.LOG_LEVEL || 'silly'
@@ -20,6 +20,22 @@ const config = {
     api: {
         prefix: '/api',
     },
+
+    db: {
+        "development": { 
+            postgres: {
+                username : process.env.DB_CONNECTION_PG_USER,
+                password: process.env.DB_CONNECTION_PG_PASSWORD,
+                database: process.env.DB_CONNECTION_PG_DATABASE,
+                host: process.env.DB_CONNECTION_PG_HOST,
+                schema: process.env.DB_CONNECTION_PG_SCHEMA
+            }
+        },
+        "production": {},
+        "test": {}
+    }
+        
+        
 }
 
 export default config
