@@ -9,7 +9,6 @@ export type IDBEnv = {
     test: IDBType,
 }
 
-
 export interface IDBType {
     postgres?: IDBPostgres;
     mysql?: IDBPostgres;

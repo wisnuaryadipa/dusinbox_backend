@@ -1,12 +1,12 @@
-import express, { ErrorRequestHandler } from 'express';
+import express, { ErrorRequestHandler, Request } from 'express';
+import {ConditionalExpression} from 'typescript';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import {IError} from '../interfaces/IError';
 import config from '../config';
 import Logger from './logger';
 
-interface ErrorWithStatus extends Error {
-    status?: number
-}
+
 
 export default (app: express.Application) => {
     
@@ -22,7 +22,6 @@ export default (app: express.Application) => {
     res.status(200).end();
   });
 
-  
   app.enable('trust proxy');
 
   app.use(cors());
@@ -31,9 +30,9 @@ export default (app: express.Application) => {
   app.use(bodyParser.json());
 
   /// catch 404 and forward to error handler
-  app.use((req, res, next) => {
-    const err = new Error('Not Found') as ErrorWithStatus;
-    err['status'] = 404;
+  app.use((req: Request, res, next) => {
+    const err = new Error('Not Found') as IError ;
+    err.status = 404;
     next(err);
   });
   

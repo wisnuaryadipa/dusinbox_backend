@@ -2,7 +2,7 @@ import winston from 'winston';
 
 
 const createTransports = () => {
-    const transports = [];
+    const transports: any[] = [];
     if(process.env.NODE_ENV !== 'development') {
       transports.push(
         new winston.transports.Console()
